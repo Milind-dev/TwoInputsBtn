@@ -14,6 +14,7 @@ export default function MultipleInputs() {
   };
   const handleClick = (e) => {
     e.preventDefault();
+    setStored([{ ...values }]);
     console.log(values);
   };
 
@@ -23,7 +24,7 @@ export default function MultipleInputs() {
         <input
           type="text"
           label="Company"
-          name="Firstname"
+          name="FirsName"
           onChange={handleChange}
           placeholder="Firstname"
         />
@@ -37,8 +38,17 @@ export default function MultipleInputs() {
         <button type="submit" onClick={handleClick}>
           clci
         </button>
+        <div>
+          {stored.map((element, index) => {
+            return (
+              <div key={index}>
+                <p>{element.FirsName}</p>
+                <p>{element.SecondName}</p>
+              </div>
+            );
+          })}
+        </div>
       </form>
-      <p>{stored} </p>
     </div>
   );
 }
