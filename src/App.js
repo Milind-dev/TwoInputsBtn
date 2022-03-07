@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './style.css';
+import MultipleInputs from './MultipleInputs';
 
 export default function App() {
   const [firstName, setFirstName] = useState('');
@@ -27,6 +28,8 @@ export default function App() {
       />
       <button onClick={handleChange}> click </button>
       <p>{Results}</p>
+      <hr />
+      <MultipleInputs />
     </div>
   );
 }
